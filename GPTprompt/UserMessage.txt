@@ -1,0 +1,16 @@
+Use the combination of all available data points to give the user a list of diagnoses. For each diagnosis, provide a short description.
+User
+lHamstringPain = 0
+rHamstringPain = 0
+lQuadPain = 0
+rQuadPain = 0
+lKneePain = 3
+rKneePain = 0
+lCalfPain = 0
+rCalfPain = 0
+lAnklePain = 4
+rAnklePain = 0
+Watch Data: None
+Images:
+Additional Information:
+I heard a pop in my knee. My ankle started hurting this morning right after I woke up.

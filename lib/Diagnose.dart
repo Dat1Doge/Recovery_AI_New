@@ -39,7 +39,10 @@ class _DiagnosePageState extends State<DiagnosePage> {
   String _imagePath = "";
   User? user = FirebaseAuth.instance.currentUser;
   FirebaseFirestore db = FirebaseFirestore.instance;
+
+  //GPT stuff
   String OpenAIKey = String.fromEnvironment("OPENAI_KEY");
+  int temperature = 1;
 
   //slider pain values
   double lHamstringPain = 0;
@@ -56,9 +59,38 @@ class _DiagnosePageState extends State<DiagnosePage> {
   //additional info text
   final additionalInfoController = TextEditingController();
 
+  //image stuff
   List<PlatformFile> selectedFiles = [];
   List<String> fileURLS = [];
   int carouselIndex = 0;
+
+  String get stringifyFileURLS {
+    String out = "";
+    int index = 1;
+    for (String url in fileURLS){
+      out += "\nimage${index}: ${url}";
+      index++;
+    }
+    return out;
+  }
+
+  Future<String> get _localPath async {
+    final directory = await getApplicationDocumentsDirectory();
+
+    return directory.path;
+  }
+
+  Future<String> get _devMsg async {
+    final path = await _localPath;
+    final file = File('$path/GPTprompt/DeveloperMessage.txt');
+    return await file.readAsString();
+  }
+
+  Future<String> get _userMsg async { //may remove?
+    final path = await _localPath;
+    final file = File('$path/GPTprompt/UserMessage.txt');
+    return await file.readAsString();
+  }
 
   Future<void> updateURLS() async {
     fileURLS.clear();
@@ -68,6 +100,7 @@ class _DiagnosePageState extends State<DiagnosePage> {
       fileURLS.add(url);
     }
   }
+
   Future<void> ai_analyze() async {
     final url = Uri.parse('https://api.openai.com/v1/chat/completions');
     final headers = {
@@ -75,18 +108,34 @@ class _DiagnosePageState extends State<DiagnosePage> {
       'Authorization': 'Bearer $OpenAIKey',
     };
     final data = {//test
-      'model': 'gpt-3.5-turbo',
+      'model': 'gpt-4.1-mini',
       'messages': [
         {
           'role': 'developer',
-          'content': ''
+          'content': _devMsg,
         },
         {
           'role': 'user',
-          'content': ''
+          'content': {
+            '''
+            lHamstringPain = ${lHamstringPain}
+            rHamstringPain = ${rHamstringPain}
+            lQuadPain = ${lQuadPain}
+            rQuadPain = ${rQuadPain}
+            lKneePain = ${lKneePain}
+            rKneePain = ${rKneePain}
+            lCalfPain = ${lCalfPain}
+            rCalfPain = ${rCalfPain}
+            lAnklePain = ${lAnklePain}
+            rAnklePain = ${rAnklePain}
+            Images: ${stringifyFileURLS}
+            Additional Information: 
+            ${additionalInfoController.text}
+            '''
+          },
         }
       ],
-      'temperature': 0.7,
+      'temperature': temperature,
     };
 
     try {
