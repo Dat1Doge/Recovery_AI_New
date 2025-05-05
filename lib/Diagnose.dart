@@ -14,20 +14,12 @@ import 'Home.dart';
 import 'dart:typed_data';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
+import 'DiagnoseResult.dart';
 
 import 'package:firebase_app_check/firebase_app_check.dart';
 
 class DiagnosePage extends StatefulWidget {
   const DiagnosePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -86,12 +78,6 @@ class _DiagnosePageState extends State<DiagnosePage> {
     return await file.readAsString();
   }
 
-  Future<String> get _userMsg async { //may remove?
-    final path = await _localPath;
-    final file = File('$path/GPTprompt/UserMessage.txt');
-    return await file.readAsString();
-  }
-
   Future<void> updateURLS() async {
     fileURLS.clear();
     final userFiles = await FirebaseStorage.instance.ref().child("uploads/${user?.uid}").listAll();
@@ -142,6 +128,7 @@ class _DiagnosePageState extends State<DiagnosePage> {
       final response = await http.post(url, headers: headers, body: jsonEncode(data));
       if (response.statusCode == 200) {
         final jsonData = jsonDecode(response.body);
+        print(jsonData);
 
       } else {
         print('Failed to generate questions. Status code: ${response.statusCode}');
@@ -201,6 +188,7 @@ class _DiagnosePageState extends State<DiagnosePage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title),
           bottom: const TabBar(
             tabs: [
               Tab(
@@ -654,7 +642,7 @@ class _DiagnosePageState extends State<DiagnosePage> {
                             });
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => MyHomePage(title: "Log in"))
+                              MaterialPageRoute(builder: (context) => DiagnoseResultPage(title: "DiagnoseResult"))
                             );
                           },
                           child: Text(
