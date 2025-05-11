@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="gcm_defaultSenderId" translatable="false">349875865970</string>
-    <string name="google_api_key" translatable="false">AIzaSyDzwY4Wp_eLGClj_OsVy2lF_7AIrGPfh_A</string>
+    <string name="google_api_key" translatable="false">AIzaSyBmHUNf63V9_XFiHXJTsd4KJpPGK8CMros</string>
     <string name="google_app_id" translatable="false">1:349875865970:android:bc43a4eba98584a6e3b5eb</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDzwY4Wp_eLGClj_OsVy2lF_7AIrGPfh_A</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBmHUNf63V9_XFiHXJTsd4KJpPGK8CMros</string>
     <string name="google_storage_bucket" translatable="false">recoveryai-31c2b.firebasestorage.app</string>
     <string name="project_id" translatable="false">recoveryai-31c2b</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">

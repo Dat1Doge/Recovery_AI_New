@@ -36,9 +36,11 @@ com.example.recovery_ai.app-packageDebugResources-34 C:\Users\zhang\StudioProjec
 com.example.recovery_ai.app-debug-35 C:\Users\zhang\StudioProjects\Recovery_AI\build\app\intermediates\merged_res\debug\mergeDebugResources
 com.example.recovery_ai.app-debug-36 C:\Users\zhang\StudioProjects\Recovery_AI\build\cloud_firestore\intermediates\packaged_res\debug\packageDebugResources
 com.example.recovery_ai.app-debug-37 C:\Users\zhang\StudioProjects\Recovery_AI\build\file_picker\intermediates\packaged_res\debug\packageDebugResources
-com.example.recovery_ai.app-debug-38 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_auth\intermediates\packaged_res\debug\packageDebugResources
-com.example.recovery_ai.app-debug-39 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_core\intermediates\packaged_res\debug\packageDebugResources
-com.example.recovery_ai.app-debug-40 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_database\intermediates\packaged_res\debug\packageDebugResources
-com.example.recovery_ai.app-debug-41 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_storage\intermediates\packaged_res\debug\packageDebugResources
-com.example.recovery_ai.app-debug-42 C:\Users\zhang\StudioProjects\Recovery_AI\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug\packageDebugResources
-com.example.recovery_ai.app-debug-43 C:\Users\zhang\StudioProjects\Recovery_AI\build\image_picker_android\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-38 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_app_check\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-39 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_auth\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-40 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_core\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-41 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_database\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-42 C:\Users\zhang\StudioProjects\Recovery_AI\build\firebase_storage\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-43 C:\Users\zhang\StudioProjects\Recovery_AI\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-44 C:\Users\zhang\StudioProjects\Recovery_AI\build\image_picker_android\intermediates\packaged_res\debug\packageDebugResources
+com.example.recovery_ai.app-debug-45 C:\Users\zhang\StudioProjects\Recovery_AI\build\path_provider_android\intermediates\packaged_res\debug\packageDebugResources
